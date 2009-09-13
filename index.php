@@ -21,9 +21,9 @@ $search_site = array (
 if (!empty ($_POST['q']) and !empty ($_POST['sub']))
 {		
 	$url="http://archlinux.fr/home";
-	if (int ($_POST['sub']) < count ($search_site))
-		$url = $search_site[$_POST['sub'] - 1][0] . 
-			$search_site[$_POST['sub'] - 1][1] . $_POST['q'];
+	if (isset ($search_site[$_POST['sub']-1]))
+		$url = $search_site[$_POST['sub']-1][0] . 
+			$search_site[$_POST['sub']-1][1] . $_POST['q'];
 	header("Location: $url ");
 	exit(0);
 }
@@ -172,7 +172,7 @@ function print_updates ($feed)
 		<div id="cont">
 		<a href="http://archlinux.fr" title="Arch Linux"><img src="logo.png" alt="Logo" /></a><br />
 		<form name="f" method="post">
-<?php $i=0; foreach ($search_site as $site): ?>
+<?php $i=1; foreach ($search_site as $site): ?>
 			<input type="radio" name="sub" value="<?php echo $i++; ?>"/>
 			<a href="<?php echo $site[0]; ?>"><?php echo $site[2] ?></a> &nbsp;&nbsp;
 <?php endforeach; ?>
