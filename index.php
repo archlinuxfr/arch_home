@@ -59,8 +59,11 @@ function get_rss($feed,$objets)
 {
 	$url = $feed[2];
 	$file = $feed[4];
-	$cache = true;
-	if (is_file ($file))
+	if (isset ($_GET['nocache']))
+		$cache = false;
+	else
+		$cache = true;
+	if ($cache and is_file ($file))
 	{
 		$last_change = filemtime ($file);
 		if ($last_change !== false and
