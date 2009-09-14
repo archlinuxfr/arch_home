@@ -63,11 +63,15 @@ function get_rss($feed,$objets)
 		$cache = false;
 	else
 		$cache = true;
+	if (isset ($_GET['delai']) and $_GET['delai'] + 0 != 0)
+		$delai = $_GET['delai'];
+	else
+		$delai = 1440;
 	if ($cache and is_file ($file))
 	{
 		$last_change = filemtime ($file);
 		if ($last_change !== false and
-			$last_change <	mktime (0,0,0,date("m"),date ("d")-1,date("y")))
+			$last_change <	mktime (date ("H"),date ("i") - $delai))
 		{
 			$cache=false;
 			
