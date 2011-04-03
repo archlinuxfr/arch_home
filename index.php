@@ -12,7 +12,7 @@ $url="http://archlinux.fr/home";
 $search_site = array (
 	array ("http://www.google.fr", "/search?q=", "Google"),
 	array ("http://forums.archlinux.fr", "/search.php?keywords=", "Forums"),
-	array ("http://wiki.archlinux.fr", "/?do=search&id=", "Wiki"),
+	array ("http://wiki.archlinux.fr", "/index.php?title=Special:Search&go=Lire&search=", "Wiki"),
 	array ("http://archlinux.fr/irc/log.php", "?q=", "IRC"),
 	array ("http://aur.archlinux.org", "/packages.php?O=0&do_Search=Aller&K=", "AUR"),
 	array ("http://bugs.archlinux.org", "/?projet=0&string=", "Bugs")
@@ -36,7 +36,7 @@ $feed_updates = array (
 		"http://www.archlinux.org/feeds/packages/",
 		5, "feed_2.xml"),
 	array ("[archlinuxfr]", "http://archlinux.fr", 
-		"http://repo.archlinux.fr/all.xml",
+		"http://afur.archlinux.fr/feed.php",
 		5, "feed_3.xml")
 	);
 
