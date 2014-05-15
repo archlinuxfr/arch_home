@@ -33,10 +33,10 @@ $feed_news = array ("Nouvelles", "//archlinux.fr",
 	3, "feed_1.xml");
 $feed_updates = array (
 	array ("[core][extra][community]", "//archlinux.fr", 
-		"https//www.archlinux.org/feeds/packages/",
+		"https://www.archlinux.org/feeds/packages/",
 		5, "feed_2.xml"),
 	array ("[archlinuxfr]", "//archlinux.fr", 
-		"https//afur.archlinux.fr/feed.php",
+		"https://afur.archlinux.fr/feed.php",
 		5, "feed_3.xml")
 	);
 
