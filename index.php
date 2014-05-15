@@ -1,26 +1,26 @@
 <?php
 
 /*****************************************************************************
-* 2009, Tuxce <tuxce.net@gmail.com>
+* 2009 - 2014, Tuxce <tuxce.net@gmail.com>
 * Page d'accueil de la communauté francophone pour la distribution Arch Linux
 * http://archlinux.fr/home
 *****************************************************************************
 */
 
 
-$url="http://archlinux.fr/home";
+$url="//archlinux.fr/home";
 $search_site = array (
-	array ("http://www.google.fr", "/search?q=", "Google"),
-	array ("http://forums.archlinux.fr", "/search.php?keywords=", "Forums"),
-	array ("http://wiki.archlinux.fr", "/index.php?title=Special:Search&go=Lire&search=", "Wiki"),
-	array ("http://archlinux.fr/irc/log.php", "?q=", "IRC"),
-	array ("http://aur.archlinux.org", "/packages.php?O=0&do_Search=Aller&K=", "AUR"),
-	array ("http://bugs.archlinux.org", "/?projet=0&string=", "Bugs")
+	array ("https://www.google.fr", "/search?q=", "Google"),
+	array ("//forums.archlinux.fr", "/search.php?keywords=", "Forums"),
+	array ("//wiki.archlinux.fr", "/index.php?title=Special:Search&go=Lire&search=", "Wiki"),
+	array ("//archlinux.fr/irc/log.php", "?q=", "IRC"),
+	array ("https://aur.archlinux.org", "/packages.php?O=0&do_Search=Aller&K=", "AUR"),
+	array ("https://bugs.archlinux.org", "/?projet=0&string=", "Bugs")
 	);
 
 if (!empty ($_POST['q']) and !empty ($_POST['sub']))
 {		
-	$url="http://archlinux.fr/home";
+	$url="//archlinux.fr/home";
 	if (isset ($search_site[$_POST['sub']-1]))
 		$url = $search_site[$_POST['sub']-1][0] . 
 			$search_site[$_POST['sub']-1][1] . $_POST['q'];
@@ -28,15 +28,15 @@ if (!empty ($_POST['q']) and !empty ($_POST['sub']))
 	exit(0);
 }
 
-$feed_news = array ("Nouvelles", "http://archlinux.fr", 
-	"http://archlinux.fr/feed",
+$feed_news = array ("Nouvelles", "//archlinux.fr", 
+	"//archlinux.fr/feed",
 	3, "feed_1.xml");
 $feed_updates = array (
-	array ("[core][extra][community]", "http://archlinux.fr", 
-		"http://www.archlinux.org/feeds/packages/",
+	array ("[core][extra][community]", "//archlinux.fr", 
+		"https//www.archlinux.org/feeds/packages/",
 		5, "feed_2.xml"),
-	array ("[archlinuxfr]", "http://archlinux.fr", 
-		"http://afur.archlinux.fr/feed.php",
+	array ("[archlinuxfr]", "//archlinux.fr", 
+		"https//afur.archlinux.fr/feed.php",
 		5, "feed_3.xml")
 	);
 
@@ -177,7 +177,7 @@ function print_updates ($feed)
 		?>
 		</div>
 		<div id="cont">
-		<a href="http://archlinux.fr" title="Arch Linux"><img src="logo.png" alt="Logo" /></a><br />
+		<a href="//archlinux.fr" title="Arch Linux"><img src="logo.png" alt="Logo" /></a><br />
 		<form name="f" method="post">
 <?php $i=1; foreach ($search_site as $site): ?>
 			<input type="radio" name="sub" value="<?php echo $i++; ?>"/>
