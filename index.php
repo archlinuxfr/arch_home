@@ -29,7 +29,7 @@ if (!empty ($_POST['q']) and !empty ($_POST['sub']))
 }
 
 $feed_news = array ("Nouvelles", "//archlinux.fr", 
-	"//archlinux.fr/feed",
+	"https://archlinux.fr/feed",
 	3, "feed_1.xml");
 $feed_updates = array (
 	array ("[core][extra][community]", "//archlinux.fr", 
